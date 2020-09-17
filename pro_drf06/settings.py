@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'apiapp',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,5 @@ MEDIA_URL = '/media/'
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'utils.exceptions.exception_handler',  # 使用自定义异常
 }
+
+AUTH_USER_MODEL = "apiapp.User"
