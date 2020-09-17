@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.views.static import serve
 
 from pro_drf06 import settings
@@ -23,5 +23,6 @@ from pro_drf06 import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^media/(?P<path>.*)', serve, {'document_root': settings.MEDIA_ROOT}),
+    path('apiapp/', include('apiapp.urls')),
 
 ]
