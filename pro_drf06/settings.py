@@ -138,6 +138,14 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+    # 频率配置
+    'DEFAULT_THROTTLE_CLASSES': [],
+    # Throttling
+    'DEFAULT_THROTTLE_RATES': {
+        'user': "3/m",
+        'anon': None,
+        'my': "1/m"
+    },
 }
 
 AUTH_USER_MODEL = "apiapp.User"

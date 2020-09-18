@@ -11,6 +11,7 @@ from rest_framework.authentication import SessionAuthentication
 from apiapp.authenticator import MyAuth
 from apiapp.models import User
 from apiapp.permission import MyPermission
+from apiapp.throttle import MyThrottle
 
 
 class Demo(APIView):
@@ -34,8 +35,9 @@ class Demo(APIView):
 
 class BookAPIView(APIView):
 
-    authentication_classes = [MyAuth]
-    permission_classes = [MyPermission]
+    # authentication_classes = [MyAuth]
+    # permission_classes = [MyPermission]
+    throttle_classes = [MyThrottle]
 
     def get(self, request, *args, **kwargs):
         return Response("读操作")
