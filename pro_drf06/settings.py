@@ -128,6 +128,12 @@ MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'utils.exceptions.exception_handler',  # 使用自定义异常
+
+    # DRF配置默认的认证器
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication'
+    ],
 }
 
 AUTH_USER_MODEL = "apiapp.User"

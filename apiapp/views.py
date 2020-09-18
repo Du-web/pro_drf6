@@ -4,7 +4,10 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.request import Request
+from rest_framework.authentication import SessionAuthentication
 
+from apiapp.authenticator import MyAuth
 from apiapp.models import User
 
 
