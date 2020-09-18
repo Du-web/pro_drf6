@@ -9,6 +9,7 @@ from rest_framework.authentication import SessionAuthentication
 
 from apiapp.authenticator import MyAuth
 from apiapp.models import User
+from apiapp.permission import MyPermission
 
 
 class Demo(APIView):
@@ -32,7 +33,8 @@ class Demo(APIView):
 
 class BookAPIView(APIView):
 
-    # authentication_classes = [MyAuth]
+    authentication_classes = [MyAuth]
+    permission_classes = [MyPermission]
 
     def get(self, request, *args, **kwargs):
         return Response("读操作")
