@@ -28,3 +28,14 @@ class Demo(APIView):
         # per = Permission.objects.filter(pk=1).first()
         # print(per.group_set.first().name)
         return Response('ok')
+
+
+class BookAPIView(APIView):
+
+    # authentication_classes = [MyAuth]
+
+    def get(self, request, *args, **kwargs):
+        return Response("读操作")
+
+    def post(self, request, *args, **kwargs):
+        return Response("写操作")

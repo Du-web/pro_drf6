@@ -131,8 +131,9 @@ REST_FRAMEWORK = {
 
     # DRF配置默认的认证器
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication'
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
+        'apiapp.authenticator.MyAuth',
     ],
 }
 
