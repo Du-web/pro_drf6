@@ -16,7 +16,7 @@ class MyAuth(BaseAuthentication):
             raise exceptions.APIException('认证信息格式有误')
         if auth_list[1] != 'william.abc.123':
             raise exceptions.APIException('校验失败')
-        user = User.objects.filter(username='admin').first()
+        user = User.objects.filter(username='du-web').first()
         if not user:
             raise exceptions.APIException('用户不存在')
         return (user, None)
